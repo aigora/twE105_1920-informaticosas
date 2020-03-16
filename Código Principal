@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
+void main(){
+system("chcp 1252");
+system("cls");
+
+int opcion;
+printf ("Introduzca opcion: \n");
+printf("1-Inicio de Sesión\n");
+printf("2-Ver Cartelera\n");
+printf("3-Pases de obras compradas\n");
+printf("4-Mis Puntos de afiliado\n");
+scanf ("%d",&opcion);
+switch (opcion)
+{
+case 1:printf ("\n");
+break;
+case 2:printf ("\n");
+break;
+case 3:printf ("\n");
+break;
+case 4:printf ("\n");
+break;
+default:
+ printf ("Opcion incorrecta\n");
+}
+}
