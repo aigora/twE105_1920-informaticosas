@@ -1,6 +1,6 @@
-# Título del trabajo
+# Teatro 
 
-Descripción breve del proyecto a realizar (2-3 frases).
+Nuestro proyecto consiste en hacer programa en el que el usuario pueda comprar entradas, elegir hora y asiento mediante un mapa de selección.
 
 ## Integrantes del equipo
 * Ignacio Cartes - @ignaciocartes99
@@ -9,4 +9,5 @@ Descripción breve del proyecto a realizar (2-3 frases).
 
 ## Objetivos del trabajo
 
-Lista de los objetivos que se persiguen con el trabajo propuesto.
+* Realizar un menú en el que el usuario eliga la hora, asiento y obra teatral.
+* Mediante usuario y contraseña pueda ver toda la información.
