@@ -10,4 +10,4 @@ Nuestro proyecto consiste en hacer programa en el que el usuario pueda comprar e
 ## Objetivos del trabajo
 
 * Realizar un menú en el que el usuario eliga la hora, asiento y obra teatral.
-* Mediante usuario y contraseña pueda ver toda la información.
+* Mediante usuario y contraseña pueda ver toda la información de horarios y tarifas, así como modificar reservas y buscar obras por su nombre.
