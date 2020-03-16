@@ -1,4 +1,4 @@
-# Teatro 
+# Teatro "La Última"
 
 Nuestro proyecto consiste en hacer programa en el que el usuario pueda comprar entradas, elegir hora y asiento mediante un mapa de selección.
 
