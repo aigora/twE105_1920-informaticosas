@@ -8,11 +8,11 @@ system("chcp 1252");
 system("cls");
 
 int opcion;
-printf ("Introduzca opcion: \n");
-printf("1-Inicio de Sesión\n");
-printf("2-Ver Cartelera\n");
-printf("3-Pases de obras compradas\n");
-printf("4-Mis Puntos de afiliado\n");
+printf ("Bienvenido a Teatros la ültima, introduzca la opcion que desee: \n");
+printf("1-Registrarse\n");
+printf("2-Inicio de Sesión.\n");
+printf("3-Ver Cartelera\n");
+printf("4-Salir del Programa\n");
 scanf ("%d",&opcion);
 switch (opcion)
 {
