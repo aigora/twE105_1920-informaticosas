@@ -9,7 +9,7 @@
 struct Fecha {
 	int dia;
 	int mes;
-	int año;
+	int aÃ±o;
 };
 
 struct Usuario {
@@ -18,11 +18,11 @@ struct Usuario {
 	char apellido2[50];
 	struct Fecha nacimiento;
 	char nom_usuario[25];
-	char contraseña[25];
+	char contraseÃ±a[25];
 	char obras[20];//Dest
 	float precio;
 	int asiento;
-	struct tm tu;
+	struct tm tu; //sjkbvksbdv
 }
 
 void registro(struct Usuario usuarios[], int i);
@@ -31,7 +31,7 @@ void registro(struct Usuario usuarios[], int i);
 int menuinicio() {
 	int opcion;	
 	printf("1-Registrarse\n");
-	printf("2-Inicio de Sesión.\n");
+	printf("2-Inicio de SesiÃ³n.\n");
 	printf("3-Ver Cartelera\n");
 	printf("4-Salir del Programa\n");
 	scanf("%d", &opcion);
@@ -42,7 +42,7 @@ int menuinicio() {
 
 char inicio(int n) {
 	if (n == 0)
-		printf("Bienvenido a Teatros la ültima, introduzca la opcion que desee: \n");
+		printf("Bienvenido a Teatros la Ã¼ltima, introduzca la opcion que desee: \n");
 	else (printf("Quiere hacer algo mas\n"));
 }
 
@@ -53,10 +53,10 @@ void main() {
 	struct Usuario usuarios[100];
 	char iniciar_usuario[25], iniciar_contrasena[25], op, op2, op3, op4, viaje, cancel, nada[25] = "-", contramod[25], sitiamen[25];
 	int fin, i;
-	int j; //para número de usuarios 
+	int j; //para nÃºmero de usuarios 
 	int num_usuarios = 4;
 	int aux;
-	int l = 0;	//Numero de intentos al iniciar sesión
+	int l = 0;	//Numero de intentos al iniciar sesiÃ³n
 	int k, x, z;		//Variables para bucles;
 	int destino, coso, cambio;
 
@@ -68,7 +68,7 @@ void main() {
 		i = 0;//reiniciamos las i a 0 cundo el cliente acaba de hacer una cosa y desea hacer mas
 		while (fin == 0) {
 
-			inicio(i); // la primera vez i = 0, por lo que saldrá el primer mensaje, mientras que si el cliente desea hacer algo más, i != 0, por lo que saldrá el segundo mensaje.
+			inicio(i); // la primera vez i = 0, por lo que saldrÃ¡ el primer mensaje, mientras que si el cliente desea hacer algo mÃ¡s, i != 0, por lo que saldrÃ¡ el segundo mensaje.
 			switch (menuinicio()){
 			case 1: {
 			registro(usuarios, num_usuarios);
@@ -83,46 +83,46 @@ void main() {
 				system("cls");
 				l++;
 				if (l == 4) {
-					printf("Número de intentos agotados. Saliendo del programa...\n");
+					printf("NÃºmero de intentos agotados. Saliendo del programa...\n");
 					guardar(usuarios, vuelo, num_usuarios);
 					return 0;
 				}
-				printf("Número de intentos restantes: %d.\n", 4 - l);
+				printf("NÃºmero de intentos restantes: %d.\n", 4 - l);
 				printf("Introducir usuario:\n");
 				getchar();
 				scanf("%s", iniciar_usuario);
-				printf("Introducir contraseña:\n");
+				printf("Introducir contraseÃ±a:\n");
 				getchar();
 				scanf("%s", iniciar_contrasena);
 				for (j = 0; j < num_usuarios; j++) {
-					if (strcmp(iniciar_usuario, usuarios[j].nom_usuario) == 0 && strcmp(iniciar_contrasena, usuarios[j].contraseña) == 0) {
+					if (strcmp(iniciar_usuario, usuarios[j].nom_usuario) == 0 && strcmp(iniciar_contrasena, usuarios[j].contraseÃ±a) == 0) {
 						l = 5;
 						break;
 					} //if
 				} //for
 			} //while
 			system("cls");
-			printf("Iniciando sesión\n");
+			printf("Iniciando sesiÃ³n\n");
 			Sleep(500);
 			system("cls");
-			printf("Iniciando sesión .\n");
+			printf("Iniciando sesiÃ³n .\n");
 			Sleep(500);
 			system("cls");
-			printf("Iniciando sesión . .\n");
+			printf("Iniciando sesiÃ³n . .\n");
 			Sleep(500);
 			system("cls");
-			printf("Iniciando sesión . . .\n");
+			printf("Iniciando sesiÃ³n . . .\n");
 			Sleep(500);
 			if (j < 3) {
 				do {
 					system("cls");
 					printf("Bienvenido %s %s %s (Administrador).\n____________________________________________________\n\n", usuarios[j].nombre, usuarios[j].apellido1, usuarios[j].apellido2);
 					system("color 0E");
-					printf("Seleccione una opción:\n\n1 - Ver Usuarios Registrados\n\n2 - Modificar información usuario\n\n3 - Información sobre las obras\n\n4 - Cerrar Sesión\n");
+					printf("Seleccione una opciÃ³n:\n\n1 - Ver Usuarios Registrados\n\n2 - Modificar informaciÃ³n usuario\n\n3 - InformaciÃ³n sobre las obras\n\n4 - Cerrar SesiÃ³n\n");
 					getchar();
 					scanf("%d", &coso);
-				// Menú	switch (coso) {
-				 // Iniciar sesión
+				// MenÃº	switch (coso) {
+				 // Iniciar sesiÃ³n
 				fin = 1; //el cliente acaba de hacer todo y el  porgrama vuelve a empezar de 0, se sale del while(fin == 0)
 			}
 					break;
@@ -158,12 +158,12 @@ void registro(struct Usuario usuarios[], int i) {
 
 	//Fecha de nacimiento
 	printf("Introducir fecha de nacimiento:\n");
-	printf("Introducir día:\n");
+	printf("Introducir dÃ­a:\n");
 	do {
 		getchar();
 		scanf("%d", &usuarios[i].nacimiento.dia);
 		if (usuarios[i].nacimiento.dia < 1 || usuarios[i].nacimiento.dia > 31) {
-			printf("Introduzca de nuevo el día, por favor\n");
+			printf("Introduzca de nuevo el dÃ­a, por favor\n");
 		}
 	} while (usuarios[i].nacimiento.dia < 1 || usuarios[i].nacimiento.dia > 31);
 	printf("Introducir mes:\n");
@@ -179,18 +179,18 @@ void registro(struct Usuario usuarios[], int i) {
 			printf("Introduzca de nuevo el mes, por favor\n");
 		}
 	} while (usuarios[i].nacimiento.mes < 1 || usuarios[i].nacimiento.mes > 12);
-	printf("Introducir año:\n");
+	printf("Introducir aÃ±o:\n");
 	do {
 		getchar();
-		scanf("%d", &usuarios[i].nacimiento.año);
-		if (usuarios[i].nacimiento.año < 1900 || usuarios[i].nacimiento.año > 2000) {
-			printf("Introduzca de nuevo el año, por favor\n");
+		scanf("%d", &usuarios[i].nacimiento.aÃ±o);
+		if (usuarios[i].nacimiento.aÃ±o < 1900 || usuarios[i].nacimiento.aÃ±o > 2000) {
+			printf("Introduzca de nuevo el aÃ±o, por favor\n");
 		}
-	} while (usuarios[i].nacimiento.año < 1900 || usuarios[i].nacimiento.año > 2000);
+	} while (usuarios[i].nacimiento.aÃ±o < 1900 || usuarios[i].nacimiento.aÃ±o > 2000);
 
 
 	//Usuario
-	printf("Introducir nombre de usuario (máximo 25 caracteres):\n");
+	printf("Introducir nombre de usuario (mÃ¡ximo 25 caracteres):\n");
 	aux_1 = 0;
 	do {
 		if (aux_1 == 1) {
@@ -209,23 +209,23 @@ void registro(struct Usuario usuarios[], int i) {
 		}
 	} while (aux_1 == 1);
 
-	//Contraseña
+	//ContraseÃ±a
 	do {
 		if (aux_2 == 1) {
-			printf("Las contraseñas introducidas son distintas, inténtelo de nuevo.\n");
+			printf("Las contraseÃ±as introducidas son distintas, intÃ©ntelo de nuevo.\n");
 		}
-		printf("Introducir contraseña (máximo 25 caracteres):\n");
+		printf("Introducir contraseÃ±a (mÃ¡ximo 25 caracteres):\n");
 		do {
 			getchar();
-			scanf("%s", usuarios[i].contraseña);
-			if (strlen(usuarios[i].contraseña) < 4) {
-				printf("Su contraseña no es segura, por favor introduzca una de más de 3 caracteres\n");
+			scanf("%s", usuarios[i].contraseÃ±a);
+			if (strlen(usuarios[i].contraseÃ±a) < 4) {
+				printf("Su contraseÃ±a no es segura, por favor introduzca una de mÃ¡s de 3 caracteres\n");
 			}
-		} while (strlen(usuarios[i].contraseña) < 4);
-		printf("Introducir contraseña por segunda vez:\n");
+		} while (strlen(usuarios[i].contraseÃ±a) < 4);
+		printf("Introducir contraseÃ±a por segunda vez:\n");
 		getchar();
 		scanf("%s", contrasena2);
-		if (strcmp(usuarios[i].contraseña, contrasena2) != 0) {
+		if (strcmp(usuarios[i].contraseÃ±a, contrasena2) != 0) {
 			aux_2 = 1;
 		}
 		else {
@@ -236,7 +236,7 @@ void registro(struct Usuario usuarios[], int i) {
 	usuarios[i].precio = 0;
 	usuarios[i].asiento = 0;
 	system("cls");
-	printf("¡SE HA REGISTRADO CON EXITO!\n");
+	printf("Â¡SE HA REGISTRADO CON EXITO!\n");
 	printf("------------------------------\n");
 }
 
