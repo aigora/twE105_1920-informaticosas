@@ -1,5 +1,4 @@
-  
-#define	_CRT_SECURE_NO_WARNINGS	
+ #define	_CRT_SECURE_NO_WARNINGS	
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
@@ -29,8 +28,8 @@ void main() {
 
 	char iniciar_sesion_usuario[25], iniciar_sesion_contrasena[25];
 	
-	int fichero_usuarios = 4;	//Pasajero i-ésimo (registro)
-	int j;		//Pasajero j-ésimo (inicio sesion)
+	int fichero_usuarios = 4;	//Espectador i-ésimo (registro)
+	int j;		//Espectador j-ésimo (inicio sesion)
 	int intentos = 0;	//Numero de intentos al iniciar sesión
  
 
@@ -54,7 +53,7 @@ void main() {
 			break;
 			//Para iniciar sesion
 		case 2:
-				 intentos = 0;
+			
 			while (intentos < 5) {
 				system("cls");
 				intentos++;
@@ -66,29 +65,35 @@ void main() {
 				printf("Introducir contrasena:\n");
 				getchar();
 				scanf("%s", iniciar_sesion_contrasena);
+				printf("\n");
 				
 				for (j = 0; j < fichero_usuarios; j++) {
 					if (strcmp(iniciar_sesion_usuario, usuarios_completo[j].nombre_usuario) == 0 && strcmp(iniciar_sesion_contrasena, usuarios_completo[j].contrasena) == 0) {
 						intentos = 5;
 						
 						break;
+						
 					} //if
-				}//for
 					
+					
+				}//for
+				    
+					printf("Usuario incorrecto, intentelo otra vez. (%i intentos restantes)", 5-intentos);
+					Sleep(2000);
 			} //while
 				
 			//animacion iniciando sesion
 			system("cls");
-			printf("Iniciando sesión\n");
+			printf("Iniciando sesion\n");
 			Sleep(500);
 			system("cls");
-			printf("Iniciando sesión .\n");
+			printf("Iniciando sesion .\n");
 			Sleep(500);
 			system("cls");
-			printf("Iniciando sesión . .\n");
+			printf("Iniciando sesion . .\n");
 			Sleep(500);
 			system("cls");
-			printf("Iniciando sesión . . .\n");
+			printf("Iniciando sesion . . .\n");
 			Sleep(500);
 			printf("Sesion Iniciada con exito!!");
 			
@@ -119,13 +124,15 @@ void main() {
 				system("cls");
 			
 			}//else 
-			break;
+			
 		case 4:
 			printf("Saliendo del programa...\n");
+		break;
+		
 			
-			// guardar(usuarios, vuelo, num_usuarios);
 			
 		}//switch
+		
 	}//while
 } //main
 
