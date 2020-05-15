@@ -50,7 +50,7 @@ void main() {
 	int numero_usuarios = 4;	//usuario i-ésimo (en el registro)
 	int j;		//cliente j-ésimo (en el inicio sesion)
 	int intentos = 0;	//Numero de intentos al iniciar sesión
-	int k, x, z;		//Variables para los bucles;
+	int k, x, z;		//Variables bucles;
 	int destino, coso, cambio;
  
 	numero_usuarios = abrir(usuarios_completo, obra, numero_usuarios);
