@@ -63,7 +63,8 @@ void main() {
 		printf("----------TEATRO LA ULTIMA----------\n\n");
 		printf("1 - Registro\n");
 		printf("2 - Inicio sesion\n");
-		printf("3 - Salir del programa.\n");
+		printf("3 - Comprar entradas\n");
+		printf("4 - Salir del programa.\n");
 		scanf("%d", &switch1);
 		switch (switch1) {
 			//Para registrarse
@@ -203,7 +204,7 @@ void main() {
 				
 				system("cls");
 				
-			case 3:
+			case 4:
 			printf("Saliendo del programa...\n");
 			
 			guardar(usuarios_completo, obra, numero_usuarios);
