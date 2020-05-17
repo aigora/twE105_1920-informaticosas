@@ -6,7 +6,6 @@
 #include <windows.h>
 #include <stdlib.h>
 
-\\lol
 
 struct usuario_estructura {
 	char nombre[30];
@@ -43,6 +42,8 @@ void recordar_teatro(struct teatro obra[], int i, FILE *df);
 
 
 void main() {
+
+    //system("CHCP 1252"); 
 	struct usuario_estructura usuarios_completo[100];
 	struct teatro obra[20];
 	char iniciar_usuario[25], iniciar_contrasena[25], switch1, switch2, switch3, switch4;
