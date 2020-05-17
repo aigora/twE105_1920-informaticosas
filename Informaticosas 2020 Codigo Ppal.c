@@ -6,7 +6,7 @@
 #include <windows.h>
 #include <stdlib.h>
 
-
+\\lol
 
 struct usuario_estructura {
 	char nombre[30];
