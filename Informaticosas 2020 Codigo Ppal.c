@@ -32,6 +32,7 @@ int menuinicio(int codigo) { //le pasamos el codigo de usuario
 		printf("2-Inicio de Sesión.\n");
 		printf("3-Ver Cartelera\n");
 		printf("4-Salir del Programa\n");
+		printf("5-Buscar obras\n");
 		scanf("%d", &opcion);
 		system("cls");
 	}
@@ -40,7 +41,7 @@ int menuinicio(int codigo) { //le pasamos el codigo de usuario
 		printf("2-Comprar entradas\n");
 		printf("3 - Salir\n");
 		scanf("%d", &opcion);
-		opcion += 4; // Para hacerlo bonito y no quitar el 1 y el 2, pero que no se confunda con el 1 y el 2 de el otro.
+		opcion += 5; // Para hacerlo bonito y no quitar el 1 y el 2, pero que no se confunda con el 1 y el 2 de el otro.
 		system("cls");
 	}
 
@@ -126,9 +127,7 @@ void main() {
 				showCartelera(cartelera, num_obras);
 				break;
 
-			case 4: //Buscar obras en la base de datos
-			buscarObra(cartelera, num_obras);
-			break;
+			case 4: 
 			case 7: //SALIR DEL PROGRAMA
 				exitProg(usuarios, &fin, &cont, num_usuarios, cartelera, num_obras);
 				break;
@@ -140,6 +139,9 @@ void main() {
 				showCartelera(cartelera, num_obras);
 
 				break;
+			case 10://Buscar obras en la base de datos
+			buscarObra(cartelera, num_obras);
+			break;
 
 			default:  printf("Esta opcion no es valida. PRUEBE DE NUEVO\n");
 			}//switch del menu principal
