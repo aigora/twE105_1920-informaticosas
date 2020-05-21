@@ -11,7 +11,7 @@
 
 
 struct usuario_estructura { //datos de cada usuario
-	char nombre[30];    
+	char nombre[30];
 	char apellido1[50];
 	char apellido2[50];
 	char nom_usuario[25];
@@ -48,14 +48,14 @@ int menuinicio(int codigo) { //le pasamos el codigo de usuario
 }
 
 char inicio(int n) { // n es el numero de iteraciones que se hacen 
-	//system("cls");
-	if (n == 0) // al emepzar el programa, te sale el mensaje inicial
-		printf("Bienvenidos al Teatro La Ultima, introduzca la opcion que desee: \n"); 
-	else (printf("Quiere hacer algo mas\n")); 
+	system("cls");
+	if (n == 0) // al empezar el programa, te sale el mensaje inicial
+		printf("Bienvenidos al Teatro La Ultima, introduzca la opcion que desee: \n");
+	else (printf("Quiere hacer algo mas\n"));
 }
 
 void registro(struct usuario_estructura usuarios_completo[], int *n);
-void login(struct usuario_estructura usuarios_completo[],int n, int *codigo,struct teatro cartelera[], int num_obras, int *fin, bool *cont);
+void login(struct usuario_estructura usuarios_completo[], int n, int *codigo, struct teatro cartelera[], int num_obras, int *fin, bool *cont);
 void seeProfile(struct usuario_estructura usuarios_completo[], int codigo);
 void exitProg(struct usuario_estructura usuarios_completo[], int *fin, bool *cont, struct teatro cartelera[], int num_obras);
 void showCartelera(struct teatro cartelera[], int *i);
@@ -74,16 +74,16 @@ void main() {
 	int num_obras = 0; // NUmero de obras. 
 	int l = 2; // numero de variables que lee el scanf por linea de fichero lo inicializamos a 2 para que se meta en el while (posible cambio a do-while)
 
-	bool cont = true; //inicializamos el booleano a 1
+	bool cont = true; //inicializamos el bool a 1
 
 	FILE *f_usuarios, *f_obras;
 	f_usuarios = fopen("listaUsuarios.txt", "rb"); //abrimos el fichero con los usuarios
 	f_obras = fopen("cartelera.txt", "r"); //abrimos fichero con las obras
 
 	num_usuarios = fread(usuarios, sizeof(struct usuario_estructura), MAX_USUARIOS, f_usuarios); //devuelve el numero de usuarios que hay hasta el momento, n-1, por lo que el nuevo usuario será el numero n.
-	 //printf("%d\n", num_usuarios); //comporbacion que fread devuelve le numero de usuarios
+																								 //printf("%d\n", num_usuarios); //comporbacion que fread devuelve le numero de usuarios
 
-	 // copiamos los datos del fichero CARTELERA a el vector CARTELERA
+																								 // copiamos los datos del fichero CARTELERA a el vector CARTELERA
 	while (num_obras < MAX_OBRAS) { //solo copiamos al vector el numero de obras que puede abarcar
 
 		l = fscanf(f_obras, "%d %50[^\n]", &cartelera[num_obras].asientos, cartelera[num_obras].obra); //la funcion fscanf devuuelve el numero de variables que lee por linea de fichero, en nuestro caso tiene los asientos y el nombre la obra.
@@ -101,7 +101,7 @@ void main() {
 		n = 0;
 
 		while (fin == 0) {
-			inicio(n); 
+			inicio(n);
 			n = 1;//como ya ha iniciliazado una vez, se cambi aa 1 para que muestre el otro mensaje de inicio
 			switch (menuinicio(cod_usuario)) { //le pasamos el codigo de usuario, para que muestre un menu u otro dependiendo si ha iniciado sesion
 
@@ -110,10 +110,10 @@ void main() {
 				break;
 
 			case 2: //INICIO DE SESION
-				login(usuarios,num_usuarios, &cod_usuario, cartelera, num_obras, &fin, &cont);//
-				//printf("%d\n", cod_usuario); //comprobacion
+				login(usuarios, num_usuarios, &cod_usuario, cartelera, num_obras, &fin, &cont);//
+																							   //printf("%d\n", cod_usuario); //comprobacion
 				break;
-			
+
 			case 3: //VER CARTELERA
 				showCartelera(cartelera, num_obras);
 				break;
@@ -167,7 +167,7 @@ void registro(struct usuario_estructura usuarios_completo[], int *n) {
 
 	usuarios_completo[*n].num_entradas = 0; //el numero de entradas  compradas cuando te regitras es 0 siempre
 
-	//Usuario
+											//Usuario
 	printf("Introducir nombre de usuario (máximo 25 caracteres):\n");
 	aux_1 = 0;
 	do {
@@ -216,12 +216,12 @@ void registro(struct usuario_estructura usuarios_completo[], int *n) {
 
 
 }
-void login(struct usuario_estructura usuarios_completo[],int n,  int *codigo, struct teatro cartelera[], int num_obras, int *fin, bool *cont) {
+void login(struct usuario_estructura usuarios_completo[], int n, int *codigo, struct teatro cartelera[], int num_obras, int *fin, bool *cont) {
 	int intentos = 0;
 	//int n = 0; // numero de usuarios guardados en el fichero
 	int j = 0;
 	char logusuario[25], logcontr[25];
-	 //PODEMOS ABRIR LOS FICHEROS EN CADA FUNCION, PERO ES MAS RAPIDO ANTES DE EMPEZAR EL PROGRAMA
+	//PODEMOS ABRIR LOS FICHEROS EN CADA FUNCION, PERO ES MAS RAPIDO ANTES DE EMPEZAR EL PROGRAMA
 	/*FILE *lista;
 	lista = fopen("listaUsuarios.txt", "rb");
 
@@ -269,11 +269,15 @@ void login(struct usuario_estructura usuarios_completo[],int n,  int *codigo, st
 void seeProfile(struct usuario_estructura usuarios_completo[], int codigo) {
 
 	system("cls");
-	printf("Bienvenido a su perfil.\n");
-	printf("NOMBRE: %s\n", usuarios_completo[codigo].nombre);
-	printf("APELLIDOS: %s %s\n", usuarios_completo[codigo].apellido1, usuarios_completo[codigo].apellido2);
-	printf("CODIGO USUARIO: %d\n ", codigo);
-	printf("NUMERO DE ENTRADAS COMPRADAS: %d", usuarios_completo[codigo].num_entradas);
+	printf("------PERFIL DE USUARIO------\n");
+	printf("Nombre:  %s\n", usuarios_completo[codigo].nombre);
+	printf("Apellidos:  %s %s\n", usuarios_completo[codigo].apellido1, usuarios_completo[codigo].apellido2);
+	printf("Codigo Usuario:  %d\n ", codigo);
+	printf("Numero de entradas compradas:  %d\n", usuarios_completo[codigo].num_entradas);
+
+	getchar();
+	printf("------------------------------");
+	getchar();
 }
 void exitProg(struct usuario_estructura usuarios_completo[], int *fin, bool *cont, int num_usuarios, struct teatro cartelera[], int num_obras) {
 	int aux = 0;
@@ -284,10 +288,10 @@ void exitProg(struct usuario_estructura usuarios_completo[], int *fin, bool *con
 	f_usuarios = fopen("listaUsuarios.txt", "wb");
 	f_cartelera = fopen("cartelera.txt", "w");
 
-	 //COPIAMOS TODOS LOS CAMBIOS Y LO QUE NO HA SIDO CAMBIADO OTRA VEZ A LOS FICHEROS
+	//COPIAMOS TODOS LOS CAMBIOS Y LO QUE NO HA SIDO CAMBIADO OTRA VEZ A LOS FICHEROS
 	fwrite(usuarios_completo, sizeof(struct usuario_estructura), num_usuarios, f_usuarios); //reescribimos en el fichero todos los usuarios antiguos mas el nuevo
 	for (aux = 0; aux < num_obras; aux++) {//copiamos linea a linea al fichero que guarda las obras, hasta que llega al numero total de obras
-		fprintf(f_cartelera, "%d %s\n", cartelera[aux].asientos, cartelera[aux].obra); 
+		fprintf(f_cartelera, "%d %s\n", cartelera[aux].asientos, cartelera[aux].obra);
 	}
 
 	fclose(f_usuarios); //ceramos los ficheros
@@ -300,28 +304,11 @@ void showCartelera(struct teatro cartelera[], int i) {
 	printf("------------------OBRAS------------------\n");
 	for (n = 0; n < i; n++) {
 		printf("OBRA: %s \n", cartelera[n].obra);
-		printf("NUMERO DE ASIENTOS DISPONIBLES: %d \n", cartelera[n].asientos);
+		printf("Numero de asientos disponibles: %d \n", cartelera[n].asientos);
 		printf("\n");
 	}
 	//Esto lo utlizamos para que no salga el menu mientras se muestran las obras por pantalla
 	getchar();
-	printf("Pulse cualquier tecla para continuar weeeeey...."); 
+	printf("-----------------------------------------");
 	getchar();
 }
-
-/*
-void EditarCartelera() {
-struct teatro obras[3];
-int i;
-FILE *obras;
-obras = fopen("cartelera.txt", "wb");
-
-for (i = 0; i < 3; i++) {
-fflush(stdin);
-printf("Nombre de la Obra: \n");
-gets(obras[i].obra);
-
-printf("Numero de asientos: \n");
-scanf("%d", &obras[i].plazas);
-}
-}*/
