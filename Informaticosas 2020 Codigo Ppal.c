@@ -31,8 +31,9 @@ int menuinicio(int codigo) { //le pasamos el codigo de usuario
 		printf("1-Registrarse\n");
 		printf("2-Inicio de Sesión.\n");
 		printf("3-Ver Cartelera\n");
-		printf("4-Salir del Programa\n");
-		printf("5-Buscar obras\n");
+		printf("4-Buscar obras\n");
+		printf("5-Salir del Programa\n");
+		
 		scanf("%d", &opcion);
 		system("cls");
 	}
@@ -127,7 +128,7 @@ void main() {
 				showCartelera(cartelera, num_obras);
 				break;
 
-			case 4: 
+			case 5: 
 			case 7: //SALIR DEL PROGRAMA
 				exitProg(usuarios, &fin, &cont, num_usuarios, cartelera, num_obras);
 				break;
@@ -139,7 +140,7 @@ void main() {
 				showCartelera(cartelera, num_obras);
 
 				break;
-			case 10://Buscar obras en la base de datos
+			case 4://Buscar obras en la base de datos
 			buscarObra(cartelera, num_obras);
 			break;
 
