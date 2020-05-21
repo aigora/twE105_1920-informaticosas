@@ -49,11 +49,14 @@ int menuinicio(int codigo) { //le pasamos el codigo de usuario
 
 char inicio(int n) { // n es el numero de iteraciones que se hacen 
 	system("cls");
-	if (n == 0) // al empezar el programa, te sale el mensaje inicial
+	if (n == 0) {// al empezar el programa, te sale el mensaje inicial
 	void logo();
 
 		printf("Bienvenidos al Teatro La Ultima, introduzca la opcion que desee: \n");
-	else (printf("Quiere hacer algo mas\n"));
+	}
+	else {
+	(printf("Quiere hacer algo mas\n"));
+}
 }
 
 void registro(struct usuario_estructura usuarios_completo[], int *n);
@@ -62,6 +65,7 @@ void seeProfile(struct usuario_estructura usuarios_completo[], int codigo);
 void exitProg(struct usuario_estructura usuarios_completo[], int *fin, bool *cont, struct teatro cartelera[], int num_obras);
 void showCartelera(struct teatro cartelera[], int *i);
 void logo();
+void buscarObra(struct teatro cartelera[], int i);
 
 
 
@@ -122,7 +126,9 @@ void main() {
 				showCartelera(cartelera, num_obras);
 				break;
 
-			case 4: //SALIR DEL PROGRAMA
+			case 4: //Buscar obras en la base de datos
+			buscarObra(cartelera, num_obras);
+			break;
 			case 7: //SALIR DEL PROGRAMA
 				exitProg(usuarios, &fin, &cont, num_usuarios, cartelera, num_obras);
 				break;
@@ -195,7 +201,7 @@ void registro(struct usuario_estructura usuarios_completo[], int *n) {
 			scanf("%s", usuarios_completo[*n].contrasena);
 
 			if (strlen(usuarios_completo[*n].contrasena) < 4) {
-				printf("Su contraseÃ±a es muy insegura, por favor introduzca mÃ¡s de 3 caracteres\n");
+				printf("Su contraseña es muy insegura, por favor introduzca mÃ¡s de 3 caracteres\n");
 			}
 		} while (strlen(usuarios_completo[*n].contrasena) < 4);
 
@@ -348,3 +354,25 @@ void logo(){
 			"\nWWWWWWWWWWWWWWWWWWWWWWWNx'             .':oOXWWWWWWWWWWWWWWW"
 			"\nWWWWWWWWWWWWWWWWWWWWWWWWW0;.       ..;okXNWWWWWWWWWWWWWWWWWW\n\n\n\n\n");
 }
+void buscarObra(struct teatro cartelera[], int i){
+	
+char busqueda[100];
+int n = 0;
+char result[100]:
+int encontrado;//Nos dirá el resultado de la búsqueda 
+printf ("Introduzca la obra que desee buscar:\n ");
+gets(busqueda);
+for (n = 0; n < i; n++) { 
+orden=strcmp(busqueda,cartelera[n].obra);
+if(encontrado==0){
+	result = cartelera[n].obra;
+}
+else{
+	printf("\n");
+	}
+
+}
+printf("Resultados búsqueda:\n\n\n\n");
+printf("%s\n", result);
+}}
+
