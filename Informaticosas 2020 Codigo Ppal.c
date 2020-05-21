@@ -50,6 +50,8 @@ int menuinicio(int codigo) { //le pasamos el codigo de usuario
 char inicio(int n) { // n es el numero de iteraciones que se hacen 
 	system("cls");
 	if (n == 0) // al empezar el programa, te sale el mensaje inicial
+	void logo();
+
 		printf("Bienvenidos al Teatro La Ultima, introduzca la opcion que desee: \n");
 	else (printf("Quiere hacer algo mas\n"));
 }
@@ -59,12 +61,14 @@ void login(struct usuario_estructura usuarios_completo[], int n, int *codigo, st
 void seeProfile(struct usuario_estructura usuarios_completo[], int codigo);
 void exitProg(struct usuario_estructura usuarios_completo[], int *fin, bool *cont, struct teatro cartelera[], int num_obras);
 void showCartelera(struct teatro cartelera[], int *i);
+void logo();
 
 
 
 void main() {
-
-	//system("CHCP 1252"); 
+	system("chcp 1252");//Código para que se puedan imprimir caracteres especiales, como letras con tildes y ñ
+    system("COLOR D3");//Código para cambiar el color del fondo (1er dígito) y de las letras (2o digito) (0 = Negro, 1 = Azul, 2 = Verde, 3 = Aqua, 4 = Rojo, 5 = Púrpura, 6 = Amarillo, 7 = Blanco, 8 =Gris, 9 = Azul Claro, A = Luz Verde, B = Aqua Luz, C = Rojo, D = Luz Violeta, E = = Amarillo Claro, F = Blanco Brillante) 
+	//D3 para probar, elegir luego color definitivo
 	struct usuario_estructura usuarios[MAX_USUARIOS]; // vector de estructuras que guarda los USUARIOS
 	struct teatro cartelera[MAX_OBRAS];//vector de estructuras que guarda las OBRAS
 	int fin, n; //variables para el fin de programa y numero de iteraciones
@@ -311,4 +315,36 @@ void showCartelera(struct teatro cartelera[], int i) {
 	getchar();
 	printf("-----------------------------------------");
 	getchar();
+}
+void logo(){
+		printf(	"WWWWWWWWWWWN0koc;'..        ..';lkXWWWWWWWWWWWWWWWWWWWWWWWWW"
+			"\nWWWWWWWX0d:'.                    .lXWWWWWWWWWWWWWWWWWWWWWWWW"
+			"\nWWWWXkl'.                         .xWWWWWWWWWWWWWWWWWWWWWWWW"
+			"\nWWKd,                              ;KWWWWWWWWWWWWWWWWWWWWWWW"
+			"\nXx'                                .dWWWWWWWWWWWWWWWWWWWWWWW"
+			"\nl.                                  :XWWWWWWWWWWWWWWWWWWWWWW"
+			"\n                                    .kWWWWWWWWWWWWWWWWWWWWWW"
+			"\n.                    'dOOkxdl'.     .dWWWWWWWWWWWWWWWWWWWWWW"
+			"\no.           .:d;     ,dKXNNKkddxxkkkKWWWWWWWWWWWWWWWWWWWWWW"
+			"\nXc         .l0NXc       .:OX0kdolc:::cloxOKNWWWWWWWWWWWWWWWW"
+			"\nWK;       ,kXNKo.       .xXx'            ..,cdOXWWWWWWWWWWWW"
+			"\nWW0;      .','.        .xXx.                  .'cxKNWWWWWWWW"
+			"\nWWW0:                .,xXx.                       .:xKWWWWWW"
+			"\nWWWWKc            .cx0XNk.                           .l0NWWW"
+			"\nWWWWWXd.        .oK0x0WO'                              .l0WW"
+			"\nWWWWWWNO:      .kXd';0K:      .'lxkkd;                   .xN"
+			"\nWWWWWWWWXx'    .,, .xNd.        .:okKKl.                  .o"
+			"\nWWWWWWWWWWXd,      :X0,             .,,.                   ."
+			"\nWWWWWWWWWWWWXkc.  .dNd.                    ;dkko'           "
+			"\nWWWWWWWWWWWWWWWKxllKX:      ,oo;            ,oKNK:         :"
+			"\nWWWWWWWWWWWWWWWWWWWW0'      lNWXk:.           .;do.      .oX"
+			"\nWWWWWWWWWWWWWWWWWWWWO.      oNWWWN0o,.                  'xNW"
+			"\nWWWWWWWWWWWWWWWWWWWWO.      cXWWWWWWNKkoc;'.          .c0WWW"
+			"\nWWWWWWWWWWWWWWWWWWWWK,      .kNWWWWWWWWWWNKd'        'xNWWWW"
+			"\nWWWWWWWWWWWWWWWWWWWWNl       .:oKWWWWWNKkl,        .oKWWWWWW"
+			"\nWWWWWWWWWWWWWWWWWWWWWO'         .;cllc;.         .oKWWWWWWWW"
+			"\nWWWWWWWWWWWWWWWWWWWWWNd.                      .,dKWWWWWWWWWW"
+			"\nWWWWWWWWWWWWWWWWWWWWWWNo.                  .'lOXWWWWWWWWWWWW"
+			"\nWWWWWWWWWWWWWWWWWWWWWWWNx'             .':oOXWWWWWWWWWWWWWWW"
+			"\nWWWWWWWWWWWWWWWWWWWWWWWWW0;.       ..;okXNWWWWWWWWWWWWWWWWWW\n\n\n\n\n");
 }
