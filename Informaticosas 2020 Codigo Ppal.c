@@ -24,6 +24,40 @@ struct teatro { //datos de cada obra
 	char obra[50];
 };
 
+void logo() {
+	printf("WWWWWWWWWWWN0koc;'..        ..';lkXWWWWWWWWWWWWWWWWWWWWWWWWW"
+		"\nWWWWWWWX0d:'.                    .lXWWWWWWWWWWWWWWWWWWWWWWWW"
+		"\nWWWWXkl'.                         .xWWWWWWWWWWWWWWWWWWWWWWWW"
+		"\nWWKd,                              ;KWWWWWWWWWWWWWWWWWWWWWWW"
+		"\nXx'                                .dWWWWWWWWWWWWWWWWWWWWWWW"
+		"\nl.                                  :XWWWWWWWWWWWWWWWWWWWWWW"
+		"\n                                    .kWWWWWWWWWWWWWWWWWWWWWW"
+		"\n.                    'dOOkxdl'.     .dWWWWWWWWWWWWWWWWWWWWWW"
+		"\no.           .:d;     ,dKXNNKkddxxkkkKWWWWWWWWWWWWWWWWWWWWWW"
+		"\nXc         .l0NXc       .:OX0kdolc:::cloxOKNWWWWWWWWWWWWWWWW"
+		"\nWK;       ,kXNKo.       .xXx'            ..,cdOXWWWWWWWWWWWW"
+		"\nWW0;      .','.        .xXx.                  .'cxKNWWWWWWWW"
+		"\nWWW0:                .,xXx.                       .:xKWWWWWW"
+		"\nWWWWKc            .cx0XNk.                           .l0NWWW"
+		"\nWWWWWXd.        .oK0x0WO'                              .l0WW"
+		"\nWWWWWWNO:      .kXd';0K:      .'lxkkd;                   .xN"
+		"\nWWWWWWWWXx'    .,, .xNd.        .:okKKl.                  .o"
+		"\nWWWWWWWWWWXd,      :X0,             .,,.                   ."
+		"\nWWWWWWWWWWWWXkc.  .dNd.                    ;dkko'           "
+		"\nWWWWWWWWWWWWWWWKxllKX:      ,oo;            ,oKNK:         :"
+		"\nWWWWWWWWWWWWWWWWWWWW0'      lNWXk:.           .;do.      .oX"
+		"\nWWWWWWWWWWWWWWWWWWWWO.      oNWWWN0o,.                  'xNW"
+		"\nWWWWWWWWWWWWWWWWWWWWO.      cXWWWWWWNKkoc;'.          .c0WWW"
+		"\nWWWWWWWWWWWWWWWWWWWWK,      .kNWWWWWWWWWWNKd'        'xNWWWW"
+		"\nWWWWWWWWWWWWWWWWWWWWNl       .:oKWWWWWNKkl,        .oKWWWWWW"
+		"\nWWWWWWWWWWWWWWWWWWWWWO'         .;cllc;.         .oKWWWWWWWW"
+		"\nWWWWWWWWWWWWWWWWWWWWWNd.                      .,dKWWWWWWWWWW"
+		"\nWWWWWWWWWWWWWWWWWWWWWWNo.                  .'lOXWWWWWWWWWWWW"
+		"\nWWWWWWWWWWWWWWWWWWWWWWWNx'             .':oOXWWWWWWWWWWWWWWW"
+		"\nWWWWWWWWWWWWWWWWWWWWWWWWW0;.       ..;okXNWWWWWWWWWWWWWWWWWW\n\n\n\n\n");
+}
+
+
 int menuinicio(int codigo) { //le pasamos el codigo de usuario
 	int opcion;
 
@@ -33,9 +67,9 @@ int menuinicio(int codigo) { //le pasamos el codigo de usuario
 		printf("3-Ver Cartelera\n");
 		printf("4-Buscar obras\n");
 		printf("5-Salir del Programa\n");
-		
+
 		scanf("%d", &opcion);
-		system("cls");
+		//system("cls");
 	}
 	else { //menu que saldrÃ¡ a los usuaris que ya se han registardo
 		printf("1-Ver Perfil\n");
@@ -43,38 +77,39 @@ int menuinicio(int codigo) { //le pasamos el codigo de usuario
 		printf("3 - Salir\n");
 		scanf("%d", &opcion);
 		opcion += 5; // Para hacerlo bonito y no quitar el 1 y el 2, pero que no se confunda con el 1 y el 2 de el otro.
-		system("cls");
+					 //system("cls");
 	}
 
 	return opcion;
 }
 
 char inicio(int n) { // n es el numero de iteraciones que se hacen 
-	system("cls");
+					 //system("cls");
 	if (n == 0) {// al empezar el programa, te sale el mensaje inicial
-	void logo();
-
+		logo();
 		printf("Bienvenidos al Teatro La Ultima, introduzca la opcion que desee: \n");
 	}
 	else {
-	(printf("Quiere hacer algo mas\n"));
+		(printf("Quiere hacer algo mas\n"));
+	}
 }
-}
+
 
 void registro(struct usuario_estructura usuarios_completo[], int *n);
 void login(struct usuario_estructura usuarios_completo[], int n, int *codigo, struct teatro cartelera[], int num_obras, int *fin, bool *cont);
-void seeProfile(struct usuario_estructura usuarios_completo[], int codigo);
-void exitProg(struct usuario_estructura usuarios_completo[], int *fin, bool *cont, struct teatro cartelera[], int num_obras);
-void showCartelera(struct teatro cartelera[], int *i);
-void logo();
+void showCartelera(struct teatro cartelera[], int i);
 void buscarObra(struct teatro cartelera[], int i);
-
-
+void seeProfile(struct usuario_estructura usuarios_completo[], int codigo);
+void comprarObra(struct usuario_estructura usuarios_completo[], int codigo, struct teatro cartelera[], int num_obras);
+void exitProg(struct usuario_estructura usuarios_completo[], int *fin, bool *cont, struct teatro cartelera[], int num_obras);
 
 void main() {
 	system("chcp 1252");//Código para que se puedan imprimir caracteres especiales, como letras con tildes y ñ
-    system("COLOR D3");//Código para cambiar el color del fondo (1er dígito) y de las letras (2o digito) (0 = Negro, 1 = Azul, 2 = Verde, 3 = Aqua, 4 = Rojo, 5 = Púrpura, 6 = Amarillo, 7 = Blanco, 8 =Gris, 9 = Azul Claro, A = Luz Verde, B = Aqua Luz, C = Rojo, D = Luz Violeta, E = = Amarillo Claro, F = Blanco Brillante) 
-	//D3 para probar, elegir luego color definitivo
+
+	system("COLOR F0");//Código para cambiar el color del fondo (1er dígito) y de las letras (2o digito) (0 = Negro, 1 = Azul, 2 = Verde, 3 = Aqua, 4 = Rojo, 5 = Púrpura, 6 = Amarillo, 7 = Blanco, 8 =Gris, 9 = Azul Claro, A = Luz Verde, B = Aqua Luz, C = Rojo, D = Luz Violeta, E = = Amarillo Claro, F = Blanco Brillante) 
+					   //D3 para probar, elegir luego color definitivo
+
+
 	struct usuario_estructura usuarios[MAX_USUARIOS]; // vector de estructuras que guarda los USUARIOS
 	struct teatro cartelera[MAX_OBRAS];//vector de estructuras que guarda las OBRAS
 	int fin, n; //variables para el fin de programa y numero de iteraciones
@@ -90,10 +125,11 @@ void main() {
 	f_usuarios = fopen("listaUsuarios.txt", "rb"); //abrimos el fichero con los usuarios
 	f_obras = fopen("cartelera.txt", "r"); //abrimos fichero con las obras
 
+										   //COPIAMOS DATOS DEL FICHERO USUARIOS A EL VECTOR DE ESTRUCTURAS
 	num_usuarios = fread(usuarios, sizeof(struct usuario_estructura), MAX_USUARIOS, f_usuarios); //devuelve el numero de usuarios que hay hasta el momento, n-1, por lo que el nuevo usuario serÃ¡ el numero n.
 																								 //printf("%d\n", num_usuarios); //comporbacion que fread devuelve le numero de usuarios
 
-																								 // copiamos los datos del fichero CARTELERA a el vector CARTELERA
+																								 //copiamos los datos del fichero CARTELERA a el vector CARTELERA
 	while (num_obras < MAX_OBRAS) { //solo copiamos al vector el numero de obras que puede abarcar
 
 		l = fscanf(f_obras, "%d %50[^\n]", &cartelera[num_obras].asientos, cartelera[num_obras].obra); //la funcion fscanf devuuelve el numero de variables que lee por linea de fichero, en nuestro caso tiene los asientos y el nombre la obra.
@@ -128,21 +164,23 @@ void main() {
 				showCartelera(cartelera, num_obras);
 				break;
 
-			case 5: 
-			case 7: //SALIR DEL PROGRAMA
+			case 4://Buscar obras en la base de datos
+				buscarObra(cartelera, num_obras);
+				break;
+
+			case 5: //SALIR DEL PORGRAMA
+			case 8: //SALIR DEL PROGRAMA
 				exitProg(usuarios, &fin, &cont, num_usuarios, cartelera, num_obras);
 				break;
 
-			case 5: // VER PERFIL
+			case 6: // VER PERFIL
 				seeProfile(usuarios, cod_usuario);
 				break;
-			case 6://COMPRAR ENTRADAS
+			case 7://COMPRAR ENTRADAS
 				showCartelera(cartelera, num_obras);
-
+				comprarObra(usuarios, cod_usuario, cartelera, num_obras);
 				break;
-			case 4://Buscar obras en la base de datos
-			buscarObra(cartelera, num_obras);
-			break;
+
 
 			default:  printf("Esta opcion no es valida. PRUEBE DE NUEVO\n");
 			}//switch del menu principal
@@ -220,13 +258,14 @@ void registro(struct usuario_estructura usuarios_completo[], int *n) {
 	} while (aux_2 == 1);
 	(*n)++; //aumentar usuarios //aumentamos el numero de usuario una vez que el registro se ha hecho con exito.
 
-	system("cls");
-	/*lista = fopen("listaUsuarios.txt", "wb");
-	fwrite(usuarios_completo, sizeof(struct usuario_estructura), MAX_USUARIOS, lista); //rescribimos en el fichero todos los usuarios antiguos mas el nuevo
-	fclose(lista);*/
-	printf("Â¡SE HA REGISTRADO CON EXITO!\n");
-	printf("------------------------------\n");
 
+			/*lista = fopen("listaUsuarios.txt", "wb");
+			fwrite(usuarios_completo, sizeof(struct usuario_estructura), MAX_USUARIOS, lista); //rescribimos en el fichero todos los usuarios antiguos mas el nuevo
+			fclose(lista);*/
+	printf("¡SE HA REGISTRADO CON EXITO!\n");
+	printf("------------------------------\n");
+	Sleep(500);
+	system("cls");
 
 }
 void login(struct usuario_estructura usuarios_completo[], int n, int *codigo, struct teatro cartelera[], int num_obras, int *fin, bool *cont) {
@@ -279,6 +318,47 @@ void login(struct usuario_estructura usuarios_completo[], int n, int *codigo, st
 	printf("Iniciando sesion . . .\n");
 	Sleep(500);
 }
+void showCartelera(struct teatro cartelera[], int i) {
+	int n = 0;
+	//system("cls");
+	printf("------------------OBRAS------------------\n");
+	for (n = 0; n < i; n++) {
+		printf("Codigo de la obra: %d \n", n + 1);
+		printf("OBRA: %s \n", cartelera[n].obra);
+		printf("Numero de asientos disponibles: %d \n", cartelera[n].asientos);
+		printf("\n");
+	}
+	//Esto lo utlizamos para que no salga el menu mientras se muestran las obras por pantalla
+	getchar();
+	printf("-----------------------------------------");
+	getchar();
+	//system("cls");
+}
+void buscarObra(struct teatro cartelera[], int i) {
+	char busqueda[100];
+	int n = 0;
+	char result[100];
+	int encontrado = 0;//Nos dirá el resultado de la búsqueda 
+
+	printf("-------------BUSQUEDA---------------");
+	printf("Introduzca la obra que desee buscar:\n ");
+	gets(busqueda);
+
+	for (n = 0; n < i; n++) {
+		encontrado = strcmp(busqueda, cartelera[n].obra);
+		if (encontrado == 0) {
+			strcpy(result, cartelera[n].obra);
+		}
+		else {
+			printf("La obra no se encuentra ahora mismo en cartelera.\n");
+		}
+
+	}
+	printf("Resultados búsqueda:\n");
+	printf("%s\n", result);
+	printf("-----------------------------------");
+	system("cls");
+}
 void seeProfile(struct usuario_estructura usuarios_completo[], int codigo) {
 
 	system("cls");
@@ -291,6 +371,40 @@ void seeProfile(struct usuario_estructura usuarios_completo[], int codigo) {
 	getchar();
 	printf("------------------------------");
 	getchar();
+
+	system("cls");
+}
+void comprarObra(struct usuario_estructura usuarios_completo[], int codigo, struct teatro cartelera[], int num_obras) {
+	int cod_obra = 0;
+	int entradas = 0;
+
+	printf("-------COMPRA DE ENTRADAS------- \n");
+
+	printf("Introduzca el CODIGO de la obra que quiere comprar:\n");
+	scanf("%d", &cod_obra);
+
+	while (cod_obra > num_obras) {
+		printf("Ese codigo no correspone a ninguna obra.\n");
+		printf("Vuelve a introducir el codigo: \n");
+		scanf("%d", &cod_obra);
+	}
+	printf("Usted ha elegido la obra: %s \n", cartelera[cod_obra - 1].obra);
+
+	printf("¿Cuantas entradas desea comprar? \n");
+	scanf("%d", &entradas);
+	while (entradas >= cartelera[cod_obra - 1].asientos) {
+		printf("No hay ese numero de asientos disponibles.\n");
+		printf("Vuelve a introducir el numero de entradas que desea comprar: \n");
+		scanf("%d", &entradas);
+	}
+
+	printf("Usted ha comprado %d entradas para la obra: %s \n", entradas, cartelera[cod_obra - 1].obra);
+	printf("-------------------------------- \n");
+	Sleep(500);
+	usuarios_completo[codigo].num_entradas += entradas;
+	cartelera[cod_obra - 1].asientos -= entradas;
+
+	system("cls");
 }
 void exitProg(struct usuario_estructura usuarios_completo[], int *fin, bool *cont, int num_usuarios, struct teatro cartelera[], int num_obras) {
 	int aux = 0;
@@ -312,70 +426,4 @@ void exitProg(struct usuario_estructura usuarios_completo[], int *fin, bool *con
 	*fin = 1; // cambiamos lo valores de fin y el booleano para que el programa se cierre (como queremos utilizar el nuevo valor en el main, usamos punteros)
 	*cont = false;
 }
-void showCartelera(struct teatro cartelera[], int i) {
-	int n = 0;
-	printf("------------------OBRAS------------------\n");
-	for (n = 0; n < i; n++) {
-		printf("OBRA: %s \n", cartelera[n].obra);
-		printf("Numero de asientos disponibles: %d \n", cartelera[n].asientos);
-		printf("\n");
-	}
-	//Esto lo utlizamos para que no salga el menu mientras se muestran las obras por pantalla
-	getchar();
-	printf("-----------------------------------------");
-	getchar();
-}
-void logo(){
-		printf(	"WWWWWWWWWWWN0koc;'..        ..';lkXWWWWWWWWWWWWWWWWWWWWWWWWW"
-			"\nWWWWWWWX0d:'.                    .lXWWWWWWWWWWWWWWWWWWWWWWWW"
-			"\nWWWWXkl'.                         .xWWWWWWWWWWWWWWWWWWWWWWWW"
-			"\nWWKd,                              ;KWWWWWWWWWWWWWWWWWWWWWWW"
-			"\nXx'                                .dWWWWWWWWWWWWWWWWWWWWWWW"
-			"\nl.                                  :XWWWWWWWWWWWWWWWWWWWWWW"
-			"\n                                    .kWWWWWWWWWWWWWWWWWWWWWW"
-			"\n.                    'dOOkxdl'.     .dWWWWWWWWWWWWWWWWWWWWWW"
-			"\no.           .:d;     ,dKXNNKkddxxkkkKWWWWWWWWWWWWWWWWWWWWWW"
-			"\nXc         .l0NXc       .:OX0kdolc:::cloxOKNWWWWWWWWWWWWWWWW"
-			"\nWK;       ,kXNKo.       .xXx'            ..,cdOXWWWWWWWWWWWW"
-			"\nWW0;      .','.        .xXx.                  .'cxKNWWWWWWWW"
-			"\nWWW0:                .,xXx.                       .:xKWWWWWW"
-			"\nWWWWKc            .cx0XNk.                           .l0NWWW"
-			"\nWWWWWXd.        .oK0x0WO'                              .l0WW"
-			"\nWWWWWWNO:      .kXd';0K:      .'lxkkd;                   .xN"
-			"\nWWWWWWWWXx'    .,, .xNd.        .:okKKl.                  .o"
-			"\nWWWWWWWWWWXd,      :X0,             .,,.                   ."
-			"\nWWWWWWWWWWWWXkc.  .dNd.                    ;dkko'           "
-			"\nWWWWWWWWWWWWWWWKxllKX:      ,oo;            ,oKNK:         :"
-			"\nWWWWWWWWWWWWWWWWWWWW0'      lNWXk:.           .;do.      .oX"
-			"\nWWWWWWWWWWWWWWWWWWWWO.      oNWWWN0o,.                  'xNW"
-			"\nWWWWWWWWWWWWWWWWWWWWO.      cXWWWWWWNKkoc;'.          .c0WWW"
-			"\nWWWWWWWWWWWWWWWWWWWWK,      .kNWWWWWWWWWWNKd'        'xNWWWW"
-			"\nWWWWWWWWWWWWWWWWWWWWNl       .:oKWWWWWNKkl,        .oKWWWWWW"
-			"\nWWWWWWWWWWWWWWWWWWWWWO'         .;cllc;.         .oKWWWWWWWW"
-			"\nWWWWWWWWWWWWWWWWWWWWWNd.                      .,dKWWWWWWWWWW"
-			"\nWWWWWWWWWWWWWWWWWWWWWWNo.                  .'lOXWWWWWWWWWWWW"
-			"\nWWWWWWWWWWWWWWWWWWWWWWWNx'             .':oOXWWWWWWWWWWWWWWW"
-			"\nWWWWWWWWWWWWWWWWWWWWWWWWW0;.       ..;okXNWWWWWWWWWWWWWWWWWW\n\n\n\n\n");
-}
-void buscarObra(struct teatro cartelera[], int i){
-	
-char busqueda[100];
-int n = 0;
-char result[100]:
-int encontrado;//Nos dirá el resultado de la búsqueda 
-printf ("Introduzca la obra que desee buscar:\n ");
-gets(busqueda);
-for (n = 0; n < i; n++) { 
-orden=strcmp(busqueda,cartelera[n].obra);
-if(encontrado==0){
-	result = cartelera[n].obra;
-}
-else{
-	printf("\n");
-	}
-
-}
-printf("Resultados búsqueda:\n\n\n\n");
-printf("%s\n", result);
-}}
 
