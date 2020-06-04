@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#include <windows.h>
 #include <stdlib.h>
 
 #define MAX_USUARIOS 50  //constantes globales: las podemos cambiar si queremos cambiar el numero de obras o usuarios.
